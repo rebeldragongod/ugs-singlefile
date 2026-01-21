@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Classes</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/scheng123321/tmm-html5-cdn1@51a72f0faa2d9cd524a0c11b4ca368350f988458/slope/TemplateData/style.css"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://ssl.gstatic.com/classroom/favicon.png"
+    />
+
+    <script src="https://cdn.jsdelivr.net/gh/scheng123321/tmm-html5-cdn1@51a72f0faa2d9cd524a0c11b4ca368350f988458/slope/TemplateData/UnityProgress.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/scheng123321/tmm-html5-cdn1@51a72f0faa2d9cd524a0c11b4ca368350f988458/slope/TemplateData/unityloader41.js"></script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: rgb(35, 31, 32);
+        font-family: Arial, sans-serif;
+      }
+
+      #gameContainer {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(35, 31, 32);
+      }
+
+      #fullscreenBtn {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        z-index: 9999;
+        padding: 10px 16px;
+        font-size: 14px;
+        border: none;
+        border-radius: 6px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        cursor: pointer;
+      }
+
+      #fullscreenBtn:hover {
+        background: rgba(0, 0, 0, 0.85);
+      }
+    </style>
+
+    <script>
+      var gameInstance;
+      let fullscreenBtn;
+
+      window.addEventListener("load", () => {
+        fullscreenBtn = document.getElementById("fullscreenBtn");
+
+        gameInstance = UnityLoader.instantiate(
+          "gameContainer",
+          "https://cdn.jsdelivr.net/gh/scheng123321/tmm-html5-cdn1@51a72f0faa2d9cd524a0c11b4ca368350f988458/slope/Build/slope.json",
+          {
+            onProgress: UnityProgress,
+            Module: {
+              onRuntimeInitialized: function () {
+                UnityProgress(gameInstance, "complete");
+              }
+            }
+          }
+        );
+      });
+
+      function enterFullscreen() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        }
+      }
+
+      // Hide / show button based on fullscreen state
+      document.addEventListener("fullscreenchange", () => {
+        if (document.fullscreenElement) {
+          fullscreenBtn.style.display = "none";
+        } else {
+          fullscreenBtn.style.display = "block";
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="gameContainer"></div>
+
+    <button id="fullscreenBtn" onclick="enterFullscreen()">
+      Full Screen
+    </button>
+  </body>
+</html>
