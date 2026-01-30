@@ -228,7 +228,7 @@ window.Audio.prototype = OriginalAudio.prototype;
 
 function rewriteURL(original) {
 
-if (original.includes("prod/350/common-v")) return "https://cdn.jsdelivr.net/gh/Pok12d/ta@main/sma/gamesettings/prod/350/common-v17.json";
+if (original.includes("prod/") && original.includes("common-v") ) return "https://cdn.jsdelivr.net/gh/Pok12d/ta@main/sma/gamesettings/prod/360/common-v4.json";
 
 else if (original.startsWith("https://smashkarts.io")) return "https://cdn.jsdelivr.net/gh/Pok12d/ta@main/sma" + original.split("https://smashkarts.io")[1]
 

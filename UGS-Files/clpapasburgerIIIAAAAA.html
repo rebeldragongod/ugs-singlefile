@@ -86,23 +86,18 @@
       const windowHeight = window.innerHeight;
       const aspectRatio = 5.5 / 3;
       
-      // Use 95% of available space instead of 100%
-      let width = Math.floor(windowWidth * 1);
-      let height = Math.floor(width / aspectRatio);
-      
-      if (height > windowHeight * 1) {
-        height = Math.floor(windowHeight * 1);
-        width = Math.floor(height * aspectRatio);
-      }
+      let width = Math.floor(windowWidth * 0.8);
+let height = Math.floor(width / aspectRatio);
+
+if (height > windowHeight * 0.8) {
+  height = Math.floor(windowHeight * 0.8);
       
       container.style.width = `${width}px`;
       container.style.height = `${height}px`;
       
-      // Calculate margins
       const topMargin = (windowHeight - height) / 2;
       const leftMargin = (windowWidth - width) / 2;
       
-      // Set black box sizes
       boxTop.style.height = `${topMargin}px`;
       boxBottom.style.height = `${topMargin}px`;
       boxLeft.style.width = `${leftMargin}px`;
@@ -125,9 +120,9 @@
       }
     });
   </script>
-    <param name="movie" value="https://cdn.jsdelivr.net/gh/bagel-man/eggyolkers@638d286c58b7952af5ee59af75587db454f3b798/games/swf/papasburgeria.swf">
-    <embed src="https://cdn.jsdelivr.net/gh/bagel-man/eggyolkers@638d286c58b7952af5ee59af75587db454f3b798/games/swf/papasburgeria.swf" width="100%" height="100%">
+    
+    <embed src="https://cdn.jsdelivr.net/gh/ubg89/PapasBurgeria@gh-pages/YHiaMNblkItEvi.swf" width="100%" height="100%">
 </body>
 </html>
-]]></Content>
+</Content>
 </Module>
