@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 
+
+
 <!-- Ultimate Game Stash file--> 
 <!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
+	
+
 
 <html lang="en-us">
 <head>
 <meta charset="utf-8"/>
+ <base href="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/redvsblue/">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tty67hlt6jf6/ghj@main/style.css"/>
+<link rel="stylesheet" href="./style.css"/> 
 <!-- Yandex Games SDK -->
-<script src="https://cdn.jsdelivr.net/gh/tty67hlt6jf6/ghj@main/v2.272eb20751e2dc6fe4e6.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/reverse-image-goggl/g@main/v2.272eb20751e2dc6fe4e6.js"></script>
 <style>
         /* Убираем выделение по нажатию клавиш */
         canvas:focus {
@@ -45,7 +50,7 @@
         for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
         k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
     })
-        (window, document, "script", "https://cdn.jsdelivr.net/gh/tty67hlt6jf6/ghj@main/tag.js", "ym");
+        (window, document, "script", "tag.js", "ym");
 
     ym(window.yandexMetricaCounterId, "init", {
         clickmap: false,
@@ -53,7 +58,6 @@
         accurateTrackBounce: true
     });
 </script>
-<noscript><div><img src="" style="position:absolute; left:-9999px;" alt=""/></div></noscript>
 </head>
 <body class="dark">
 <div id="unity-container" class="unity-desktop">
@@ -61,17 +65,17 @@
 </div>
 <div id="loading-cover" style="display:none;">
 <div id="unity-loading-bar">
-<div id="unity-logo"><img src="https://cdn.jsdelivr.net/gh/tty67hlt6jf6/ghj@main/logo.png"/></div>
+<div id="unity-logo"><img src="logo.png"/></div>
 <div id="unity-progress-bar-empty" style="display: none;">
 <div id="unity-progress-bar-full"></div>
 </div>
 <div class="spinner"></div>
 </div>
-</div>
+</div> 
 <!-- Additional body modules -->
 <script>
         const hideFullScreenButton = "";
-        const buildUrl = "https://cdn.jsdelivr.net/gh/tty67hlt6jf6/ghj@main/Build/";
+        const buildUrl = "Build";
         const loaderUrl = buildUrl + "/BlueVSRed1.loader.js";
         const config = {
             dataUrl: buildUrl + "/a36b9f5940448d36a8d5682bc38478ea.data.unityweb",
@@ -112,7 +116,7 @@
 
         // Фоновое изображение при загрузке игры. При сборке билда код меняется взависимости от настроек проекта.
         
-        canvas.style.background = "url('') center / cover";
+        canvas.style.background = "url('background.jpg') center / cover";
 
         loadingCover.style.display = "";
 

@@ -1,74 +1,74 @@
-<!-- Ultimate Game Stash file--> 
-<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
-<!-- Made by Genizy--> 
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <base href="https://rawcdn.githack.com/bubbls/youtube-playables/main/pou/">
+ <base href="https://cdn.jsdelivr.net/gh/greeniYT/clever@gh-pages/">
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, shrink-to-fit=no" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Pou</title>
-    <link rel="icon" type="image/png" href="assets/icon.png">
+
+
+    <title>Pou Unblocked - ubg235 GameDistribution</title>
+
+
+    <link rel="icon" type="image/png" href="../icons/icon_40x40.png">
     <!-- For apple devices -->
-    <link rel="apple-touch-icon" type="image/png" href="assets/icon.png" />
-    <link rel="stylesheet" href="assets/css/app.css" type="text/css" nonce="nEsvHewDKSKQZPWExNde-A" />
-	<!-- YT PLAYABLES -->
-	<script src="https://rawcdn.githack.com/bubbls/youtube-playables/main/ytgame.js" nonce="nEsvHewDKSKQZPWExNde-A"></script>
-	
-	<!-- #FASTLIB# -->
-	<script defer src="fastLib/_importer.js" data-fast="fastLib/fastHeader.js" data-fast-options="{'checkbrowser':false}" type="text/javascript" nonce="nEsvHewDKSKQZPWExNde-A"></script>
+    <link rel="apple-touch-icon" type="image/png" href="../icons/icon_40x40.png" />
+    <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
+
+
+
+
 </head>
-<body>
+
+<body style="overflow:hidden;">
     <div id="content"> </div>
     <div id="orientation"></div>
-	
-	<!-- start-fast-library -->
-    <script type="text/javascript" nonce="nEsvHewDKSKQZPWExNde-A">
-		document.addEventListener('fastloaded', function(e)
-		{
-			window.fast.gameReady = function()
-			{
-				window.fast.goGame({
-					prepare:prepareGame,
-					body:["vendor/phaser.min.js", "vendor/box2d-p3.min.js", "pou.min.js"],
-					init:function(){ window.gameStart(), window.fastActivePopup(), ytgame.game.firstFrameReady() },
-					enterfs:function(){ },
-					exitfs:function(){ },
-					afterinfs:function(){ window.fastCheckMiniGameForMiui(true) }
-				});
-				console.log("inside [gameReady] -> "+window.fast.lang);
-			}
-			window.fast.stageElements(window.fast.gameReady, {fsbehind:true, nostats:true});
-		}, false);
+    <script type="text/javascript">
+        var _azerionIntegration = {
+            "gdId": "d1362abc246f43bdb5c26643aec2b61b",
+            "advType": "gd",
+            "alxType": "std",
+            "af": false,
+            "sa": false,
+            "la": false,
+            "bd": 0,
+            "playBtn": true,
+            "cp": false
+        }
+
+        var libs = [];
+        var azDefaultLanguage;
+
+
+        var gameName = "https://cdn.jsdelivr.net/gh/greeniYT/clever@gh-pages/pou.min.js";
+
+
+
+
+
+
+        //This all here is for cache busting;
+        function addScript(src, buster, callback) {
+            var s = document.createElement('script');
+            s.setAttribute('src', src + '?v=' + buster);
+            if (typeof callback === 'function') {
+                s.onload = callback;
+            }
+            document.body.appendChild(s);
+        }
+
+
+
+        addScript('https://cdn.jsdelivr.net/gh/greeniYT/clever@gh-pages/version.js', Date.now(), function() {
+
+            addScript(gameName, version, function() {});
+
+
+        });
     </script>
-	<!-- end-fast-library -->
-	
-	<script nonce="nEsvHewDKSKQZPWExNde-A">
-		async function prepareGame()
-		{
-			//check audio
-			window.fast.gameAudio = ytgame.system.isAudioEnabled();
-			//check lang
-			await ytgame.system.getLanguage().then(function(lang)
-			{
-				//strip the subtag and default to english if not supported
-				lang = lang.split('-')[0];
-				lang = (window.fast.info.languages.indexOf(lang)>-1) ? lang : window.fast.info.languages[0];
-				console.log('set lang to '+lang);
-				window.fast.lang = lang;
-				return new Promise((resolve, reject) => { resolve() });
-			});
-		}
-		//onchangeaudio
-		ytgame.system.onAudioEnabledChange(function(isAudioEnabled)
-		{
-			if(window.fast) window.fast.gameAudio = isAudioEnabled;
-			if(typeof window.fastEnableAudio==="function") window.fastEnableAudio(isAudioEnabled);
-		});
-	</script>
 </body>
+
 </html>
