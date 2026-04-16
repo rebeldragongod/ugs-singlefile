@@ -1,10 +1,5 @@
-<Module>
-
-
-<!-- Ultimate Game Stash file--> 
+<!-- Ultimate Game Stash file-->
 <!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
-<!-- ported by shxyder --> 
-
 
 <Module>
 <html lang="en">
@@ -86,18 +81,23 @@
       const windowHeight = window.innerHeight;
       const aspectRatio = 5.5 / 3;
       
-      let width = Math.floor(windowWidth * 0.8);
-let height = Math.floor(width / aspectRatio);
-
-if (height > windowHeight * 0.8) {
-  height = Math.floor(windowHeight * 0.8);
+      // Use 95% of available space instead of 100%
+      let width = Math.floor(windowWidth * 1);
+      let height = Math.floor(width / aspectRatio);
+      
+      if (height > windowHeight * 1) {
+        height = Math.floor(windowHeight * 1);
+        width = Math.floor(height * aspectRatio);
+      }
       
       container.style.width = `${width}px`;
       container.style.height = `${height}px`;
       
+      // Calculate margins
       const topMargin = (windowHeight - height) / 2;
       const leftMargin = (windowWidth - width) / 2;
       
+      // Set black box sizes
       boxTop.style.height = `${topMargin}px`;
       boxBottom.style.height = `${topMargin}px`;
       boxLeft.style.width = `${leftMargin}px`;
@@ -120,9 +120,9 @@ if (height > windowHeight * 0.8) {
       }
     });
   </script>
-    
-    <embed src="https://cdn.jsdelivr.net/gh/shayderrr/portsv2@main/cactusmccoy2.swf" width="100%" height="100%">
+    <param name="movie" value="REPLACE">
+	<embed src="https://cdn.jsdelivr.net/gh/schoolstuff1337/supplies@main/swf/cactusmccoy2_v2_1.swf" width="100%" height="100%">
 </body>
 </html>
-</Content>
+]]></Content>
 </Module>
